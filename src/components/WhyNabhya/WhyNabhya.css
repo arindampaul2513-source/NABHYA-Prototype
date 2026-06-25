@@ -1,0 +1,50 @@
+.why-section {
+  padding: 100px 8%;
+}
+
+.why-section h2 {
+  text-align: center;
+  color: cyan;
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+}
+
+.why-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(150px, 1fr));
+
+  gap: 20px;
+}
+
+.why-card {
+  background: rgba(255,255,255,0.05);
+
+  backdrop-filter: blur(15px);
+
+  border: 1px solid rgba(0,255,255,0.15);
+
+  border-radius: 25px;
+
+  padding: 35px;
+
+  transition: 0.4s;
+}
+
+.why-card:hover {
+  transform: translateY(-10px);
+
+  box-shadow:
+    0 0 25px rgba(0,255,255,0.2);
+}
+
+.why-card h3 {
+  color: cyan;
+  margin-bottom: 20px;
+}
+
+.why-card p {
+  color: #cbd5e1;
+  line-height: 1.7;
+}

@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap');
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family: 'Orbitron', sans-serif;
+}
+
+.landing-container{
+  min-height:100vh;
+  width:100%;
+  overflow:hidden;
+  position:relative;
+  background:
+  radial-gradient(circle at top,#102040,#020617);
+  color:white;
+}
+
+/* STARS */
+
+.stars,
+.stars2{
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:transparent;
+}
+
+.stars::after,
+.stars2::after{
+  content:"";
+  position:absolute;
+  width:2px;
+  height:2px;
+  background:white;
+  box-shadow:
+  100px 100px #fff,
+  300px 150px #fff,
+  500px 300px #fff,
+  700px 120px #fff,
+  900px 450px #fff,
+  1100px 250px #fff,
+  1300px 500px #fff,
+  1500px 200px #fff,
+  1700px 350px #fff;
+}
+
+.stars{
+  animation: moveStars 100s linear infinite;
+}
+
+.stars2{
+  animation: moveStars 160s linear infinite;
+}
+
+@keyframes moveStars{
+  from{
+    transform:translateY(0);
+  }
+
+  to{
+    transform:translateY(-1000px);
+  }
+}
+
+/* NAVBAR */
+
+.navbar{
+  width:90%;
+  margin:auto;
+  padding:25px 0;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  backdrop-filter:blur(20px);
+}
+
+.logo-section{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.logo{
+  width:55px;
+}
+
+.nav-links{
+  display:flex;
+  gap:40px;
+}
+
+.nav-links a{
+  color:white;
+  text-decoration:none;
+}
+
+.nav-links a:hover{
+  color:cyan;
+}
+
+/* HERO */
+
+.hero{
+  min-height:80vh;
+
+  width:90%;
+  margin:auto;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.hero-left{
+  max-width:650px;
+}
+
+.hero-left h1{
+  font-size:4rem;
+  line-height:1.2;
+  color:#00ffff;
+}
+
+.hero-left p{
+  margin-top:30px;
+  font-size:1.1rem;
+  line-height:2;
+  color:#cbd5e1;
+}
+
+.start-btn{
+  margin-top:40px;
+
+  padding:18px 40px;
+
+  border:none;
+  border-radius:15px;
+
+  background:linear-gradient(90deg,#00ffff,#0066ff);
+
+  color:white;
+  font-size:18px;
+
+  cursor:pointer;
+  transition:.4s;
+  .start-btn {
+  position: relative;
+  z-index: 100;
+}
+}
+
+.start-btn:hover{
+  transform:translateY(-8px);
+  box-shadow:0 0 40px cyan;
+}
+
+.hero-right{
+  animation: floatEarth 5s ease-in-out infinite;
+}
+
+.earth{
+  width:500px;
+
+  transform: translateX(10px);
+
+}
+
+@keyframes floatEarth{
+  0%{
+    transform:translateY(0);
+  }
+
+  50%{
+    transform:translateY(-20px);
+  }
+
+  100%{
+    transform:translateY(0);
+  }
+}
+
+/* FEATURES */
+
+.features{
+  width:90%;
+  margin:50px auto;
+
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+  gap:30px;
+}
+
+.card{
+  padding:30px;
+
+  border:1px solid rgba(255,255,255,.1);
+
+  background:rgba(255,255,255,.05);
+
+  backdrop-filter:blur(20px);
+
+  border-radius:20px;
+
+  transition:.4s;
+}
+
+.card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 0 30px rgba(0,255,255,.4);
+}
+
+.card h3{
+  margin-bottom:15px;
+  color:#00ffff;
+}
+
+.card p{
+  color:#cbd5e1;
+  line-height:1.8;
+}
+
+@media(max-width:900px){
+
+.hero{
+  flex-direction:column;
+  text-align:center;
+}
+
+.hero-left h1{
+  font-size:2.8rem;
+}
+
+.earth{
+  width:300px;
+  margin-top:50px;
+}
+
+.nav-links{
+  display:none;
+}
+
+}
+.stars,
+.stars2 {
+  pointer-events: none;
+}
+
+.navbar,
+.hero,
+.features,
+.stats-section,
+.why-section {
+  position: relative;
+  z-index: 10;
+}
+/* LOGO SECTION */
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+/* Animated Logo */
+
+.animated-logo {
+
+  width: 130px;
+  height: 60px;
+
+  object-fit: cover;
+
+  border-radius: 15px;
+
+  filter:
+    drop-shadow(0 0 20px rgba(0,255,255,.7));
+
+  transition: .4s ease;
+}
+
+.animated-logo:hover {
+  transform: scale(1.08);
+}
+
+/* NABHYA TEXT */
+
+.logo-text {
+  font-family: "Shivaraja", sans-serif;
+  font-size: 2.8rem;
+  letter-spacing: 5px;
+
+  background: linear-gradient(
+    90deg,
+    #FF9933 0%,
+    #FFFFFF 50%,
+    #138808 100%
+  );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+
+  text-shadow:
+    0 0 10px rgba(255,153,51,.5),
+    0 0 15px rgba(255,255,255,.5),
+    0 0 20px rgba(19,136,8,.5);
+}
+.background-video {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  z-index: 0;
+
+  opacity: 0.35;
+
+  filter:
+    brightness(0.6)
+    contrast(1.1);
+}
